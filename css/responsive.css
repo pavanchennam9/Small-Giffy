@@ -1,0 +1,86 @@
+/* ==========================================================================
+   RESPONSIVE STYLES
+   ========================================================================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo-wrap { max-width: 360px; margin: 0 auto; }
+  .gallery-grid { columns: 3 200px; }
+  .diary { width: 300px; height: 420px; }
+  .page-nav.prev { left: 10px; }
+  .page-nav.next { right: 10px; }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed; top: 0; right: -100%; height: 100vh; width: 78%;
+    background: rgba(15, 23, 42, 0.97); backdrop-filter: var(--glass-blur);
+    flex-direction: column; justify-content: center; gap: 30px;
+    transition: right 0.4s ease; z-index: 4500;
+  }
+  .nav-menu.active { right: 0; }
+  .nav-toggle { display: flex; }
+
+  .countdown { gap: 8px; }
+  .cd-box { min-width: 58px; padding: 10px 8px; }
+  .cd-box span { font-size: 1.3rem; }
+
+  .counters { gap: 36px; }
+
+  .timeline-line { left: 20px; }
+  .timeline-item, .timeline-item.left, .timeline-item.right {
+    width: 100%; left: 0; text-align: left; padding-left: 50px; padding-right: 10px;
+  }
+  .timeline-item.left .timeline-dot, .timeline-item.right .timeline-dot { left: 12px; }
+
+  .gallery-grid { columns: 2 160px; }
+
+  .diary { width: 260px; height: 380px; }
+  .page-inner { padding: 26px 18px; }
+  .polaroid { width: 150px; }
+  .page-nav { width: 36px; height: 36px; font-size: 1.1rem; }
+
+  .cake-wrap { transform: scale(0.85); }
+
+  .music-player { bottom: 16px; right: 16px; }
+
+  .lb-image { width: 320px; }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .hero-title .line { font-size: 2.2rem; }
+  .hero-name { font-size: 3rem !important; }
+  .hero-subtitle { font-size: 1.1rem; }
+
+  .section-title { font-size: 2.2rem; }
+  .gallery-heading { letter-spacing: 4px; }
+
+  .about-cards { grid-template-columns: 1fr; }
+
+  .cd-box { min-width: 48px; padding: 8px 6px; }
+  .cd-box span { font-size: 1.05rem; }
+
+  .diary { width: 220px; height: 320px; }
+  .page-nav.prev { left: -4px; }
+  .page-nav.next { right: -4px; }
+
+  .cake-controls { flex-direction: column; align-items: center; }
+  .cake-wrap { transform: scale(0.7); margin-top: 0; }
+
+  .letter-paper { padding: 20px 16px; }
+  .letter-body { font-size: 1rem; }
+
+  .celebrate-btn { padding: 16px 36px; font-size: 1.05rem; }
+
+  .finale-name { font-size: 3rem; }
+}
+
+/* Landscape phones */
+@media (max-height: 480px) and (orientation: landscape) {
+  .hero { min-height: 100vh; padding: 40px 0; }
+  .countdown { margin-bottom: 16px; }
+  .loading-screen .loader-scene { transform: scale(0.8); }
+}

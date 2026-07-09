@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>❤️</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@500;700&family=Caveat:wght@500;700&family=Parisienne&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ============ LOADING SCREEN ============ -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader-scene">
+      <div class="loader-gift">
+        <div class="gift-lid"></div>
+        <div class="gift-box"></div>
+        <div class="gift-ribbon-v"></div>
+        <div class="gift-ribbon-h"></div>
+        <div class="gift-sparkle s1">✨</div>
+        <div class="gift-sparkle s2">✨</div>
+        <div class="gift-sparkle s3">✨</div>
+      </div>
+      <p class="loader-text">Preparing Something Special<span
+          class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill" id="loaderFill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CURTAIN / DOOR TRANSITION ============ -->
+  <div class="curtain-wrap" id="curtainWrap">
+    <div class="curtain curtain-left"></div>
+    <div class="curtain curtain-right"></div>
+  </div>
+
+  <!-- ============ SCROLL PROGRESS ============ -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">Mental<span>✨</span></div>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About Her</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#scrapbook" class="nav-link">Scrap Book</a></li>
+      <li><a href="#cake" class="nav-link">Cake</a></li>
+      <li><a href="#letter" class="nav-link">Secret Letter</a></li>
+      <li><a href="#contact" class="nav-link">Reply</a></li>
+    </ul>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- ============ AMBIENT PARTICLE CANVAS ============ -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ============ MUSIC PLAYER ============ -->
+  <div class="music-player" id="musicPlayer">
+    <button class="music-toggle" id="musicToggle" aria-label="Play music">🎵</button>
+    <div class="music-panel" id="musicPanel">
+      <div class="visualizer" id="visualizer">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <input type="range" id="volumeSlider" min="0" max="100" value="50">
+      <button id="muteBtn">🔊</button>
+    </div>
+    <audio id="bgMusic" loop src="rendukallu.mp3"></audio>
+  </div>
+
+  <!-- ============ HERO / HOME ============ -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="floaters" id="floaters"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow" data-aos>My Favorite Person ❤️</p>
+      <h1 class="hero-title">
+        <span class="line">Small Celebration</span>
+        <span class="line hero-name">For You<span class="heartbeat">💖</span></span>
+      </h1>
+      <p class="hero-subtitle">You Make Myy Every Moment Beautiful</p>
+
+      <div class="countdown" id="countdown">
+        <div class="cd-box"><span id="cdDays">00</span><small>Days</small></div>
+        <div class="cd-box"><span id="cdHours">00</span><small>Hours</small></div>
+        <div class="cd-box"><span id="cdMins">00</span><small>Mins</small></div>
+        <div class="cd-box"><span id="cdSecs">00</span><small>Secs</small></div>
+      </div>
+      <div class="its-your-day" id="itsYourDay">
+        <h2>It's Your Day! 🎉</h2>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ABOUT HER ============ -->
+  <section id="about" class="about page-section">
+    <p class="section-eyebrow">The Heart of This Page</p>
+    <h2 class="section-title">About Her</h2>
+
+    <div class="about-grid">
+      <div class="about-photo-wrap" data-tilt>
+        <div class="about-photo">
+          <img src="Gallery/1.jpeg" alt="About her photo">
+        </div>
+        <div class="about-photo-glow"></div>
+      </div>
+
+      <div class="about-cards">
+        <div class="glass-card quality-card">
+          <span class="q-icon">😊</span>
+          <h3>Eyes</h3>
+          <p>In your eyes, I found a little universe where my heart always feels at home.</p>
+        </div>
+        <div class="glass-card quality-card">
+          <span class="q-icon">✨</span>
+          <h3>Smile</h3>
+          <p>Every time I hear you, my heart smiles a little brighter.</p>
+        </div>
+        <div class="glass-card quality-card">
+          <span class="q-icon">🌙</span>
+          <h3>Character</h3>
+          <p>The beauty of your character is beyond words.</p>
+        </div>
+        <div class="glass-card quality-card">
+          <span class="q-icon">💫</span>
+          <h3>Sweet Trouble</h3>
+          <p>Every little prank, every playful moment with you becomes a memory I'll always cherish.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="counters">
+      <div class="counter-item">
+        <span class="counter-num" data-target="8">0</span><span class="counter-suffix">+</span>
+        <p>Years of Journey</p>
+      </div>
+      <div class="counter-item">
+        <span class="counter-num" data-target="9999">0</span><span class="counter-suffix">+</span>
+        <p>Words</p>
+      </div>
+    </div>
+
+    <!-- MEMORY TIMELINE -->
+    <div class="timeline" id="timeline">
+      <h3 class="timeline-title">Our Story, Year by Year</h3>
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="glass-card timeline-card">
+          <span class="timeline-year">The Beginning</span>
+          <h4>How We Met</h4>
+          <p>Two strangers, one moment,that never looked back.</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="glass-card timeline-card">
+          <span class="timeline-year">The Chaos Years</span>
+          <h4>Every Adventure</h4>
+          <p>Late nights Chats, Calls, plans that always turned into stories.</p>
+        </div>
+      </div>
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="glass-card timeline-card">
+          <span class="timeline-year">The Hard Days</span>
+          <h4>Always Showing Up</h4>
+          <p>The who stayed through every storm without being asked.</p>
+        </div>
+      </div>
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="glass-card timeline-card">
+          <span class="timeline-year">Today</span>
+          <h4>Still Going Strong</h4>
+          <p>And somehow, every year with you gets even better than the last.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section id="gallery" class="gallery-section page-section">
+    <p class="section-eyebrow">A Little Proof</p>
+    <h2 class="section-title gallery-heading">CLICKS</h2>
+    <div class="gallery-intro">
+      <p class="gallery-tagline">📷 Polaroid Wall <span>Most Popular</span></p>
+    </div>
+    <p class="gallery-sub">Every picture, a little universe of a my memory.</p>
+
+    <div class="gallery-scroll">
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Populated by gallery.js placeholders; replace data-src with real images -->
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose">✕</button>
+    <button class="lb-prev" id="lbPrev">‹</button>
+    <div class="lb-content">
+      <div class="lb-image" id="lbImage"></div>
+      <p class="lb-caption" id="lbCaption"></p>
+      <span class="lb-counter" id="lbCounter"></span>
+    </div>
+    <button class="lb-next" id="lbNext">›</button>
+  </div>
+
+  <!-- ============ SCRAP BOOK ============ -->
+  <section id="scrapbook" class="scrapbook-section page-section">
+    <p class="section-eyebrow">Turn the Page</p>
+    <h2 class="section-title">Memories With Her</h2>
+
+    <div class="table-scene" id="tableScene">
+      <div class="table-deco petal p1"></div>
+      <div class="table-deco petal p2"></div>
+      <div class="table-deco candle-deco">🕯️</div>
+      <div class="table-deco mug-deco">☕</div>
+      <div class="table-deco lights-deco">🪔</div>
+
+      <div class="diary" id="diary">
+        <div class="diary-cover" id="diaryCover">
+          <div class="cover-photo">
+            <img src="Gallery/9.jpeg" alt="Scrapbook cover" loading="lazy">
+          </div>
+          <h3 class="cover-title">Memories<br>With Her ❤️</h3>
+          <div class="cover-ribbon"></div>
+          <p class="cover-hint">Click to Open</p>
+        </div>
+
+        <div class="book" id="book"></div>
+
+        <button class="page-nav prev" id="pagePrev">‹</button>
+        <button class="page-nav next" id="pageNext">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INTERACTIVE CAKE ============ -->
+  <section id="cake" class="cake-section page-section">
+    <p class="section-eyebrow">Make a Wish</p>
+    <h2 class="section-title">Your Cake Awaits</h2>
+
+    <div class="party-hall">
+      <div class="hall-curtain left"></div>
+      <div class="hall-curtain right"></div>
+      <div class="hall-balloons">
+        <span>🎈</span><span>🎈</span><span>🎈</span><span>🎈</span><span>🎈</span>
+      </div>
+
+      <div class="cake-wrap" id="cakeWrap">
+        <div class="cake-plate"></div>
+        <div class="cake-tier tier-1">
+          <div class="cake-cream"></div>
+        </div>
+        <div class="cake-tier tier-2">
+          <div class="cake-cream"></div>
+          <div class="cake-drip"></div>
+        </div>
+        <div class="cake-tier tier-3">
+          <div class="cake-cream"></div>
+          <div class="cake-drip"></div>
+        </div>
+        <div class="cake-flowers"><span>🌸</span><span>🌺</span><span>🌸</span></div>
+
+        <div class="candles" id="candles">
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+        </div>
+
+        <div class="cake-knife" id="cakeKnife">🔪</div>
+        <div class="cake-message" id="cakeMessage">Happy B'Day Maaaa ❤️</div>
+      </div>
+
+      <div class="cake-controls">
+        <button class="cake-btn" id="btnLight">🕯️ Light Candles</button>
+        <button class="cake-btn" id="btnBlow">💨 Blow Candles</button>
+        <button class="cake-btn" id="btnCut">🍰 Cut Cake</button>
+        <button class="cake-btn cake-restart" id="btnRestart">↻ Restart</button>
+      </div>
+      <p class="cake-hint" id="cakeHint">Light the candles, make a wish, then blow them out ✨</p>
+    </div>
+  </section>
+
+  <!-- ============ SECRET LETTER ============ -->
+  <section id="letter" class="letter-section page-section">
+    <p class="section-eyebrow">For Your Eyes Only</p>
+    <h2 class="section-title">The Secret Letter</h2>
+
+    <div class="letter-scene">
+      <div class="lock-card glass-card" id="lockCard">
+        <div class="lock-icon">🔒</div>
+        <p>This letter is sealed just for you.</p>
+        <button class="cake-btn" id="unlockBtn">Unlock Letter</button>
+      </div>
+
+      <div class="envelope-wrap" id="envelopeWrap">
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+          <div class="envelope-flap"></div>
+          <div class="wax-seal">❤</div>
+          <div class="letter-paper" id="letterPaper">
+            <p class="letter-greeting">My Mental ,</p>
+            <!-- EDITABLE MESSAGE BLOCK: replace the text inside #letterText with your personal message -->
+            <p class="letter-body" id="letterText" data-full-text="I don't know... Asalu ammailu ante nenu chala dhooram ga unde vadini. 😅 Asalu nenu neeku ela daggara ayyano kuda naaku teliyadu. 🫶 Ninnu starting lo chusinappude ninnu friend chesukovali ani anukunna, but nuvvu ela react avutavo teliyaledu. 🤞 Ala ayithe neetho matlada, nuvvu kuda matladesav. 😊❤️
+
+🏡 Lockdown lo maa intiki veltunte edo la anipinchindi. 😔 Asalu vellali ani anipinchaledu. 🥺 Vellina kuda nuvve gurthochav. 💭❤️ Tharvatha dhairyam chesi neeku message chesa. 📱✨ Thank God, nuvvu kuda message chesav. 🙏💖 Appati nundi ippati varaku manam chatting chesukuntune unnam. 💬🫂💕
+
+😔 Oka vishayam lo matram neeku enni times sorry cheppina, adi naaku ippatiki guilty gane undi. 💔 For this, I am very sorry... Sorry maa. 🥺❤️🙏
+
+&#x1F90D; Nenu ippatiki vere ammai evaritho kuda close avvaledu... avanu kuda. 🚫 Endhuko telusa? Vaallu alavatu avvakudadhu ane oka intention valla. 💭 Ayina naaku nuvvu thappa evaru unnaru cheppu... 🫂❤️ Adi ayina neethone maa. 💖🫶🏼
+
+💼 Naaku entha pedda work unna sare, 😵‍💫 entha pedda tension unna sare, 😣 neetho okkasari matladithe naa mood motham set aipothundi. 😊💖✨
+
+❤️‍🩹 You are my stress booster. 🌸🫂💕
+
+✨ &quot;I think the best thing that happened in my life is you.&quot; ❤️ Thank you for coming into my life. 🌍💖🫶🏼
+
+🥹 Neeku okati cheppana...
+
+💗 &quot;No one can occupy your place. 🫶🏼 No one can replace you. 💕 Up to now and in the future also... 🫂💗✨&quot;
+
+🤝 Nenu evariki promise cheyyanu. Okkasari nenu maata ichanu ante, adi life end aye varaku. ♾️❤️
+
+🫂 &quot;Life antha tough situation lo unna, 🌧️ naa chuttu enthamandhi unna, 👥 ninnu matram eppatiki vadalanu. ❤️ I will always care for you, 🥰 think about you, 💭 and protect you. 🛡️❤️&quot; It's my promise. 🤞💖
+🎉 Finally... It is one of my favorite day. 💖🎂✨
+
+🎂 Happy Birthday, Maa... 🥹❤️
+Mental... 🤪💕
+Pandi... 🐷🫂❤️🧿🫶🏼🎈">
+            </p>
+            <p class="letter-sign" id="letterSign" style="display: none;">— Your's Introvert</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT FOOTER ============ -->
+  <footer id="contact" class="site-footer page-section">
+    <div class="footer-content">
+      <p class="section-eyebrow">Get In Touch</p>
+      <h2 class="section-title">Reply</h2>
+      <p>Send a quick note on your feedback</p>
+      <form class="contact-form glass-card" id="contactForm" action="https://formspree.io/f/xkolyrry" method="POST">
+        <div class="contact-form__header">
+          <h3>Message Me</h3>
+          <p>I'll receive your note directly and reply as soon as I can.</p>
+        </div>
+        <label class="contact-field">
+          <span>Your Name</span>
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label class="contact-field">
+          <span>Your Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label class="contact-field">
+          <span>Message</span>
+          <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
+        </label>
+        <button type="submit" class="cake-btn contact-submit">Send Message</button>
+        <p class="contact-success" id="contactSuccess" style="display: none; color: #7cf7b2; margin-top: 8px;">Sent
+          successfully</p>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      <p>This was made just for you. 🫂❤️✨</p>
+      <p>© 2026 All rights reserved @ Pavan</p>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script src="js/particles.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/scrapbook.js"></script>
+  <script src="js/cake.js"></script>
+  <script src="js/celebration.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
